@@ -2,17 +2,19 @@
     <div>
         <p v-if ="esta_trabalhando">Estou trabalhando no momento.</p>
         <p v-else>Estou em buscar de novas oportunidades.</p>
-        <p>Utilizo as seguintes tecnologias</p>
+        <p>Utilizo as seguintes tecnologias para back-end</p>
         <ul>
-            <li>Javascript</li>
-            <li>PHP</li>
-            <li>Python</li>
+            <li v-for="(technology, index) in backend_technologies" v-bind:key="index">{{ technology }}</li>
+        </ul>
+        <p>Utilizo as seguintes tecnologias para front-end</p>
+        <ul>
+            <li v-for="technology in frontend_technologies" :key="technology.id">{{ technology.language }}</li>
         </ul>
         <div>
             <button @click="showEmail">{{ textoBotao }}</button>
         </div>
         <p v-show = "mostrar_email && !esta_trabalhando">Mande uma mensagem para {{ email }}</p>
-        <p class ="teste">Para acessar meu portifólio <a v-bind:href ="meu_link" target = "blank">Basta clicar aqui</a></p>
+        <p class ="teste">Para acessar meu portifólio <a vk-bind:href ="meu_link" target = "blank">Basta clicar aqui</a></p>
         <Picture />
     </div>
 </template>
@@ -33,7 +35,13 @@ import Picture from './Picture.vue'
                 mostrar_email:false,
                 email: "nathalidorio@gmail.com",
                 meu_link: "https://www.inter.it/it",
-                textoBotao: "Mostrar email"
+                textoBotao: "Mostrar email",
+                backend_technologies: ["PHP", "Python", "Node.js" ],
+                frontend_technologies: [
+                    {id: 1, language: "HTML"},
+                    {id: 2, language: "CSS"},
+                    {id: 3, language: "JavaScript"},
+                ],
             };
         },
         methods: {
