@@ -35,7 +35,7 @@
             <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
         </template>
 
-        <v-app-bar-title>Tarefex</v-app-bar-title>
+        <v-app-bar-title >Tarefex</v-app-bar-title>
 
         <v-btn icon>
             <v-icon>mdi-magnify</v-icon> <!--botões do lado direito da barra principal-->
@@ -78,8 +78,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cal+Sans&family=Passion+One:wght@400;700;900&display=swap');
 .v-app-bar-title {
     font-family: "Bungee Shade", sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 2.0rem !important;
 }
 </style>
